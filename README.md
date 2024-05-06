@@ -9,6 +9,12 @@
 -->
 
 
+## Changes from the main branch
+1. Import IFC files directly to a new table via the function
+2. Buffering added at **ExtractBeforeCloseParenthesis** to improve performance
+3. Extraction of Object Name and Object Type Name data
+
+For more information, refer to <a href="https://digitalbbq.au/index.php/2024/05/16/expanding-on-ifc-metadata-extraction-in-powerbi/">Expanding on IFC Metadata Extration in PowerBI at digitalBBQ</a>
 
 <!-- PROJECT SHIELDS -->
 <!--
@@ -117,11 +123,11 @@ Before you get to work you will need to have a basic understanding of the PowerB
 4. Paste the contents of **IFC4PowerBI.pq** into the Advanced Editor and click done
 5. You now have a function for opening IFC Binary files in PowerQuery, now you need to find your binaries
 6. Rename the function by right-clicking it, the name of the function will be how we reference it later, so it's best to use IFC4PowerBI
-7. The easiest way to do this is to locate a folder with one or many IFC files. **New Source > Folder**
-8. Select your folder and click open. Use the PowerBI filters to filter out any files that are not required
-9. Create a new column **Add Column > Custom Column**
-10. In the formula box type **IFC4PowerBI([Content])** . This assumes you named the function IFC4PowerBI and you now have a column called **Content** which contains **Binary** values
-11. This will leave you with a new column consisting of a table, which you can expand to find all of the IFC metadata from your models. **Make sure you delete the Content column before expanding to avoid exponential memory consumption**
+7. Find your IFC file, in Windows 11, right-click, select "Copy as path"
+8. Back in PowerBI, paste the IFC path into the function text box and click "Invoke"
+9. A new table will be generated named "Invoked Function"
+10. Rename the table as you wish
+11. Rinse and repeat for as many IFCs as your hardware can handle
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -157,35 +163,6 @@ By extracting the data from multiple revisions of the same model you can quantif
 - Is the metadata quality improving
 - Have certain elements dissapeared
 
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [ ] Add number handling seperate to text strings
-- [ ] Look for efficiencies
-
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
